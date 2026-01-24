@@ -9,6 +9,7 @@
 /* === RESET & GLOBAL === */
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; text-decoration: none; border: none; outline: none; }
 html { font-size: 62.5%; overflow-y: auto; scroll-behavior: smooth; }
+.lenis.lenis-smooth { scroll-behavior: auto; }
 body { background: var(--bg-color); color: var(--text-color); overflow-x: hidden; }
 
 /* === COMPONENTS === */
@@ -241,6 +242,7 @@ input:focus, textarea:focus {
     .switch-label { display: none; }
     .switch-icon { width: 45px; height: 45px; font-size: 2.2rem; }
 }
+
 
 
 
