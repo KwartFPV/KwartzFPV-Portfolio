@@ -120,7 +120,7 @@ section { position: relative; width: 100%; min-height: 100vh; display: flex; jus
 .main-card .highlight { font-size: 2rem; color: var(--main-color); font-weight: 700; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px; }
 .main-card p { font-size: 1.8rem; color: #ddd; margin-bottom: 3rem; max-width: 80%; }
 .specs-list { list-style: none; margin-bottom: 3rem; display: flex; gap: 1.5rem; flex-wrap: wrap; }
-.specs-list li { font-size: 1.5rem; background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); padding: 0.8rem 1.5rem; border-radius: 10px; color: #fff; border: 1px solid rgba(255,255,255,0.1); }
+.specs-list li { font-size: 1.5rem; background: rgba(255, 255, 255, 0.05);backdrop-filter: blur(10px);-webkit-backdrop-filter: blur(10px);border: 1px solid rgba(255, 255, 255, 0.1);; backdrop-filter: blur(5px); padding: 0.8rem 1.5rem; border-radius: 10px; color: #fff; border: 1px solid rgba(255,255,255,0.1); }
 
 .side-column { display: flex; flex-direction: column; gap: 3rem; }
 .small-card { flex: 1; }
@@ -242,6 +242,7 @@ input:focus, textarea:focus {
     .switch-label { display: none; }
     .switch-icon { width: 45px; height: 45px; font-size: 2.2rem; }
 }
+
 
 
 
