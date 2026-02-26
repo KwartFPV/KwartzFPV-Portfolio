@@ -1,65 +1,93 @@
-# 🚁 KWARTZ FPV - Portfolio Cinématique & OSD
+# KWARTZ FPV — Cinematic Portfolio
 
-> **"Sky is our limit."**
-> Une expérience web immersive double : un portfolio cinématique haute performance et un mode "Pilote OSD" interactif pour les passionnés de FPV.
+> *"Sky is our limit."*
 
-**Voir le site en ligne :** https://kwartzfpv.netlify.app/
+Live: **https://kwartzfpv.netlify.app/**
 
-## 🏔️ Aperçu du Projet
+---
 
-Ce dépôt contient le code source du **Portfolio Kwartz FPV**. Refondu en 2025, ce site propose deux interfaces uniques :
-1.  **Mode Cinématique :** Une expérience de défilement fluide avec arrière-plans vidéo, grilles modernes (Bento Grid) et transitions douces.
-2.  **Mode Pilote (OSD) :** Une interface secondaire complète (`indexosd.html`) simulant les lunettes FPV (On-Screen Display) avec télémétrie en temps réel simulée (batterie, signal, GPS) et navigation au style rétro.
+## Overview
 
-## ✨ Fonctionnalités Clés
+Personal portfolio for Kwartz FPV — cinematic drone pilot specializing in mountain surfing and long range FPV, based in France. The site showcases flights, gear and the journey from first quad to mountain surfing specialist.
 
-### 🎨 Design & Expérience
-* **Hero Immersif :** Vidéo d'arrière-plan HTML5 plein écran avec fallback optimisé.
-* **Effet "Mountain Dive" :** Zoom progressif et fondu au défilement pour une immersion totale.
-* **Mode OSD Interactif :** Une interface secondaire complète (`indexosd.html`) simulant un retour vidéo de drone analogique/numérique.
-* **Bento Grid Layout :** Mise en page asymétrique moderne pour la section "Hangar".
-* **Intégration YouTube :** Grille de vidéos optimisée pour le chargement rapide.
+---
 
-### ⚡ Performance & Optimisation (Nouveauté)
-Ce projet a été rigoureusement optimisé pour les Core Web Vitals :
-* **Chargement Éclair (LCP) :** Préchargement des ressources critiques et gestion intelligente des priorités (`fetchpriority`).
-* **Stabilité Visuelle (CLS) :** Dimensions explicites sur tous les médias pour éviter les sauts de mise en page.
-* **Rendu Intelligent :** Utilisation de `content-visibility: auto` pour ne pas calculer le rendu des sections hors écran.
-* **JavaScript Non-Bloquant :** Scripts différés (`defer`) et boucles d'animation optimisées via `requestAnimationFrame`.
-* **Polices Légères :** Chargement sélectif des graisses de police nécessaires.
+## Sections
 
-## 🛠️ Stack Technique
+| # | Section | Description |
+|---|---------|-------------|
+| Hero | Magazine Cover | Full-screen video background with large Bebas Neue title and parallax dive effect |
+| 01 | Pilot | Bio, portrait and style tags |
+| — | Philosophy | Scrolling ticker + 3 philosophy cards |
+| 02 | Numbers | Animated stats counters (flight hours, videos, mountains, km) |
+| 03 | Hangar | Drone builds — Jeno 7" long range, 5" freestyle, gear |
+| 04 | Journey | Timeline from 2023 to present |
+| 05 | Cinema | YouTube video grid with lazy-load thumbnails |
+| 06 | Contact | Formspree form + social links |
 
-* **HTML5 :** Structure sémantique et propre.
-* **CSS3 :** Grid, Flexbox, Scroll Snap, Animations GPU, Variables CSS.
-* **JavaScript (Vanilla) :** Logique légère pour le menu mobile, les effets de scroll (Lenis) et la simulation de télémétrie OSD.
-* **Bibliothèques :** [Lenis](https://github.com/studio-freight/lenis) (Smooth Scroll), Boxicons (Icônes).
+---
 
-## 📬 Contact
+## Tech Stack
 
-    Instagram : @kwartz_fpv
+- **HTML5** — semantic, accessible markup
+- **CSS3** — custom properties, grid, flexbox, clip-path, scroll animations
+- **JavaScript (Vanilla)** — no frameworks, single RAF scroll loop
+- **[Lenis](https://github.com/studio-freight/lenis)** — smooth scroll (desktop only)
+- **[Boxicons](https://boxicons.com/)** — icon set
+- **[Formspree](https://formspree.io/)** — contact form backend
 
-    YouTube : Kwartz_fpv
+---
 
-    Email : thomfpv@gmail.com
+## Performance
 
-© 2025 Kwartz FPV | All Rights Reserved
-## 📂 Structure du Projet
+- Single `requestAnimationFrame` loop for all scroll effects (no duplicate listeners)
+- `content-visibility: auto` on off-screen sections
+- `loading="lazy"` + `decoding="async"` on all images below the fold
+- `fetchpriority="high"` on hero poster image
+- `dns-prefetch` for all third-party origins
+- Scripts loaded with `defer`
+- Video served in `.webm` with mobile-optimised source variant
 
-```text
-├── index.html          # Mode Cinématique (Page principale)
-├── style.css           # Styles optimisés pour le mode Cinématique
-├── script.js           # Logique UI et Effets (Smooth Scroll, Dive)
+---
+
+## SEO
+
+- Full Open Graph + Twitter Card meta tags
+- 3 Schema.org JSON-LD blocks: `Person`, `WebSite`, `VideoObject`
+- `sitemap.xml` with image and video extensions
+- `robots.txt` allowing all major crawlers
+- `rel="canonical"` set to production URL
+
+---
+
+## Project Structure
+
+```
+├── index.html          # Main page
+├── style.css           # All styles
+├── script.js           # UI logic & scroll effects
+├── sitemap.xml         # Search engine sitemap
+├── robots.txt          # Crawler rules
+├── README.md
 │
-├── indexosd.html       # Mode Pilote (Interface OSD)
-├── styleosd.css        # Styles rétro/terminaux pour l'OSD
-├── scriptosd.js        # Simulation de télémétrie (Batterie, RSSI, GPS)
-│
-├── assets/             # Dossier des médias optimisés (.webp, .webm)
-│   ├── header-video.webm
-│   ├── background2.webp
-│   ├── drone-7.webp
-│   ├── drone-5.webp
-│   ├── gear.webp
-│   └── ...
-└── README.md           # Documentation
+└── assets/
+    ├── header-video.webm       # Hero background video (desktop)
+    ├── header-video-osd.webm   # Hero background video (mobile)
+    ├── background2.webp        # Hero poster / fallback
+    ├── image.webp              # Pilot portrait
+    ├── drone-7.webp            # Jeno 7" build photo
+    ├── drone-5.webp            # 5" freestyle build photo
+    └── gear.webp               # Gear photo
+```
+
+---
+
+## Contact
+
+- Instagram: [@kwartz_fpv](https://www.instagram.com/kwartz_fpv)
+- YouTube: [Kwartz_fpv](https://www.youtube.com/@Kwartz_fpv)
+- Email: thomfpv@gmail.com
+
+---
+
+© 2025 Kwartz FPV — All Rights Reserved
