@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+    <!-- Main page -->
+    <url>
+        <loc>https://kwartzfpv.netlify.app/</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://kwartzfpv.netlify.app/assets/image.webp</image:loc>
+            <image:title>Kwartz FPV — Cinematic Mountain Surfing Drone Pilot</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://kwartzfpv.netlify.app/assets/drone-7.webp</image:loc>
+            <image:title>Jeno 7 inch Long Range FPV Drone</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://kwartzfpv.netlify.app/assets/drone-5.webp</image:loc>
+            <image:title>5 inch Freestyle FPV Drone</image:title>
+        </image:image>
+        <video:video>
+            <video:thumbnail_loc>https://img.youtube.com/vi/h5VdPoTgGJ0/maxresdefault.jpg</video:thumbnail_loc>
+            <video:title>Mountain Surfing — Kwartz FPV</video:title>
+            <video:description>Cinematic FPV mountain surfing in the Pyrenees</video:description>
+            <video:player_loc>https://www.youtube.com/embed/h5VdPoTgGJ0</video:player_loc>
+            <video:publication_date>2024-01-01</video:publication_date>
+        </video:video>
+    </url>
+
+</urlset>
